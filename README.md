@@ -4,3 +4,5 @@
 😘 After going over C again, try tailoring the kernel.
 
 😅Notes are messy, I will sort them out when I have time.
+
+![查看源图像](README.assets/AIdgeoG.jpg)
