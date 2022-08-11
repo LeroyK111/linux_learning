@@ -1,0 +1,59 @@
+SSH远程登录
+win10应用与功能中，下载安装OpenSSH实现。
+docker ubuntu 安装ssh实现。
+openssh-client 客户端安装，并将公钥传送给服务器端。
+openssh-server 服务端安装，并生成的密钥是继续可以继续传递的。
+
+# windows10配置ssh
+配置密钥,执行以后会在《我的文档》下生成一个《.ssh文件夹》,其中包含私钥文件id_rsa和公钥文件id_rsa.pub
+ssh-keygen -t rsa -P "用户名"          还不会有详解
+启动windows服务端，让其他机子远程登录自己的主机
+cmd >>>net start sshd启动windows ssh服务端
+cmd >>>net stop sshd关闭windows ssh服务端
+ssh windows用户@ip  win32利用openssh远程登录其他机子
+
+# docker中ubuntu配置
+cp /etc/apt/sources.list /etc/apt/sources.list.bak 先一步做好备份
+docker cp sources.list ubuntu:/etc/apt/ 将宿主机的编辑好的文件放入Ubuntu容器中
+sudo apt-get update 更新软件列表
+sudo apt-get upgrade 更新软件
+sudo apt-get install openssh-client ssh客户端      例如 ssh yucicheung账号@10.170.11.147 -p 22 服务器ip+port 可能有密钥or密码
+sudo apt-get install openssh-server ssh服务端 重点
+ssh配置文件
+vim /etc/ssh/sshd_config 服务器端
+vim /etc/ssh/sshd_config 客户端
+PermitRootLogin yes开启root权限
+PasswordAuthentication no关闭密码验证
+port 22 端口默认22
+ListenAddress 0.0.0.0 ip默认全部
+UseDNS yes通常在内网互连时，设置为no，使连接快写。
+LoginGraceTime 2m登录时间为2s
+#PrintLastLog yes显示上次登录信息
+
+开启ssh服务器端
+/etc/init.d/ssh start
+/etc/init.d/ssh stop
+/etc/init.d/ssh restart
+检查是否启动
+ps -e | grep ssh
+配置密钥,执行以后会在root目录下生成一个.ssh文件夹,其中包含私钥文件id_rsa和公钥文件id_rsa.pub
+ssh-keygen -t rsa -P "用户名"
+在服务器端，将公钥id_rsa.pub追加进authorized_keys当前目录下
+cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+给与权限，为了安全
+chmod 600 .ssh/authorized_keys
+chmod 700 .ssh
+这里是将本地公钥上传给远程服务器上
+scp用法，linux对linux
+scp /home/yucicheung/.ssh/id_rsa.pub     yucicheung@10.170.44.206:/home/yucicheung/.ssh/authorized_keys
+docker本地用法，linux对win10      
+docker cp ubuntu:/root/.ssh/id_rsa.pub   C:\Users\Admin\.ssh
+总结一下就是，客户端生成的公钥要传递给服务端ssh server文件中。
+
+ubuntu上传下载文件
+scp username@serverip:/path/filename /local_path 下载到本地
+scp /local_path/filename username@serverip:/path  从本地上传服务器
+
+
+单独写个教程。
+ssh root@127.0.0.1 -p 6666
