@@ -826,6 +826,8 @@ dpkg --contents package.deb 显示尚未安装的一个包所提供的文件列�
 dpkg -S /bin/ping 确认所给的文件由哪个deb包提供 
 
 
+apt和apt-get其中apt的包管理工具更值得推荐！！！
+
 APT 软件工具 (Debian, Ubuntu 以及类似系统) 
 apt-get install package_name 安装/更新一个 deb 包 
 apt-cdrom install package_name 从光盘安装/更新一个 deb 包 
