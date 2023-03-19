@@ -560,16 +560,71 @@ chattr +S file1 一旦应用程序对这个文件执行了写操作，使系统�
 chattr +u file1 若文件被删除，系统会允许你在以后恢复这个被删除的文件 
 lsattr 显示特殊的属性 
 
-例如#ll
--类型 rwx文件权限 r-x用户权限 r-x用户组权限   1        root    root     0       May             4       06:19      .dockerenv*
-d rwx r-x r-x   1        root    root  4096       May             6       06:27      ./
-drwxr-xr-x   1        root    root  4096       May             6       06:27      ../
-文件类型   硬链接    所有者  用户组  文件类型 创建时间     文件大小 文件修改时间 文件名
--普通文件  rwx读 写 执行(进入)
+参考文献https://blog.51cto.com/u_15669429/5351558
+root@777120daaede:/# ls -l
+total 72
+drwxr-xr-x   2 root root 4096 Dec 20  2021 bin
+drwxr-xr-x   2 root root 4096 Oct  3  2021 boot
+drwxr-xr-x   5 root root  360 Mar 19 00:09 dev
+drwxr-xr-x   2 root root 4096 Dec 21  2021 docker-entrypoint-initdb.d
+lrwxrwxrwx   1 root root   34 Dec 21  2021 entrypoint.sh -> usr/local/bin/docker-entrypoint.sh
+drwxr-xr-x   1 root root 4096 Feb 14 02:13 etc
+drwxr-xr-x   2 root root 4096 Oct  3  2021 home
+drwxr-xr-x   1 root root 4096 Dec 21  2021 lib
+drwxr-xr-x   2 root root 4096 Dec 20  2021 lib64
+drwxr-xr-x   2 root root 4096 Dec 20  2021 media
+drwxr-xr-x   2 root root 4096 Dec 20  2021 mnt
+drwxr-xr-x   2 root root 4096 Dec 20  2021 opt
+dr-xr-xr-x 316 root root    0 Mar 19 00:09 proc
+drwx------   1 root root 4096 Dec 21  2021 root
+drwxr-xr-x   1 root root 4096 Dec 21  2021 run
+drwxr-xr-x   2 root root 4096 Dec 20  2021 sbin
+drwxr-xr-x   2 root root 4096 Dec 20  2021 srv
+dr-xr-xr-x  11 root root    0 Mar 19 00:09 sys
+drwxrwxrwt   1 root root 4096 Mar 19 00:09 tmp
+drwxr-xr-x   1 root root 4096 Dec 20  2021 usr
+drwxr-xr-x   1 root root 4096 Dec 20  2021 var
+|---1-----|-2-|-3-|--4--|--5--|-6--------|-7-|
+第一组：
+字符1
+-普通文件
 d目录      
 l软连接    r--文件所在用户组权限
 c字符设备  r--文件其他组用户权限
 b块文件硬盘
+
+字符2-4
+当前用户下 rwx读 写 执行(进入)
+
+字符5-7
+当前用户的群组 rwx读 写 执行(进入)
+
+字符8-0
+其他群组的权限 rwx读 写 执行(进入)
+
+第二组：
+count文件数量
+
+第三组：
+文件所有者
+
+第四组：
+文件所有者的群组
+
+第五组
+文件大小 bytes 字节 等价于 B 
+
+第六组
+最后修改日期
+
+第七组
+文件名
+
+
+
+
+
+
 
 打包和压缩文件 
 bunzip2 file1.bz2 解压一个叫做 'file1.bz2'的文件 
