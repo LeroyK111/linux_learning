@@ -459,7 +459,7 @@ cat /etc/shadow   查看密码
 groupadd group_name 创建一个新用户组 
 groupdel group_name 删除一个用户组 
 groupmod -n new_group_name old_group_name 重命名一个用户组 
-useradd -c "Name Surname " -g group组名 -d /home/user1 -s /bin/bash user1用户名 创建一个属于 "admin" 用户组的用户 
+useradd -c "docs " -g [group组名] -d /home/user1 -s /bin/bash [user1用户名] 创建一个属于 "admin" 用户组的用户 
 useradd user1 创建一个新用户
 userdel -r user1 删除一个用户 ( '-r' 删除家目录)
 userdel userl	删除一个用户
