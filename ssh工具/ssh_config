@@ -1,0 +1,77 @@
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+
+Include /etc/ssh/ssh_config.d/*.conf
+# 任意ip
+Host *
+# 此行将 ForwardAgent 设置为 no，表示禁用SSH代理转发。
+#   ForwardAgent no
+# 此行将 ForwardX11 设置为 no，表示禁用X11转发。
+#   ForwardX11 no
+# 此行将 ForwardX11Trusted 设置为 yes，表示允许在X11转发时信任客户端的X11显示。
+#   ForwardX11Trusted yes
+# 设置为 yes，表示允许密码身份验证。
+#   PasswordAuthentication yes
+# 设置为 no，表示禁用基于主机的身份验证。
+#   HostbasedAuthentication no
+# GSSAPI协议强化
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   GSSAPIKeyExchange no
+#   GSSAPITrustDNS no
+# 此行将 BatchMode 设置为 no，表示不启用批处理模式。
+#   BatchMode no
+# 此行将 CheckHostIP 设置为 yes，表示SSH将检查远程主机的IP地址以确保其与之前连接的主机具有相同的IP地址。
+#   CheckHostIP yes
+# 此行将 AddressFamily 设置为 any，表示SSH服务器将侦听任何IP地址族的连接，包括IPv4和IPv6。
+#   AddressFamily any
+# 此行将 ConnectTimeout 设置为0，表示连接超时被禁用。
+#   ConnectTimeout 0
+# 私钥地址
+#   StrictHostKeyChecking ask
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+# 端口
+#   Port 22
+# 密钥算法
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+# 此行将 EscapeChar 设置为 ~，表示 ~ 字符将被用作SSH逃脱字符。
+#   EscapeChar ~
+# 此行将 Tunnel 设置为 no，表示禁用SSH隧道功能。
+#   Tunnel no
+# 此行指定了SSH隧道的设备参数。在这里，配置为 any:any，表示隧道可以使用任何可用的网络设备。
+#   TunnelDevice any:any
+#  此行将 PermitLocalCommand 设置为 no，表示禁止在SSH会话中执行本地命令。
+#   PermitLocalCommand no
+# 此行将 VisualHostKey 设置为 no，表示禁用SSH客户端的可视主机密钥功能。
+#   VisualHostKey no
+# 此行配置了SSH客户端的代理命令。
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+# 此行配置了重新协商密钥的限制。
+#   RekeyLimit 1G 1h
+# 此行指定了用户已知主机文件的路径。
+#   UserKnownHostsFile ~/.ssh/known_hosts.d/%k
+# 环境变量
+    SendEnv LANG LC_*
+# 此行将 HashKnownHosts 设置为 yes，表示在用户已知主机文件 (~/.ssh/known_hosts) 中对主机名和公钥进行散列处理。
+    HashKnownHosts yes
+# 此行将 GSSAPIAuthentication 设置为 yes，表示启用GSSAPI身份验证。
+    GSSAPIAuthentication yes
