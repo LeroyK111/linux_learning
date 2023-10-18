@@ -7,7 +7,7 @@
 
 ![查看源图像](README.assets/AIdgeoG.jpg)
 
-<<<<<<< HEAD
+- 如果要你要使用移动存储设备，文件格式必须是exFAT格式，否则无法兼容MacOs，Linux，windows
 # release version tip
 ```
 以下是关于这些不同计算机体系结构的简要介绍：
@@ -44,7 +44,4 @@ Xtensa：Xtensa架构是用于嵌入式处理器的可扩展32位和64位RISC架
 MicroBlaze：MicroBlaze是Xilinx FPGA（现场可编程门阵列）上基于32位RISC架构的软核处理器。
 =======
 # tips
-```
-1.如果要你要使用移动存储设备，文件格式必须是exFAT格式，否则无法兼容。
->>>>>>> d20ef27e4274f0e1de3fae5c42e0cfa8b33b827f
 ```
