@@ -1,0 +1,165 @@
+{
+  "main": {
+    "id": "3ff58fd729568a20",
+    "type": "split",
+    "children": [
+      {
+        "id": "d631e5f0a2f2b291",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7c75fc9897e72c28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3504fe6968fa1c5d",
+    "type": "split",
+    "children": [
+      {
+        "id": "14e003a180c9190a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47bd917149e0fa28",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "dee9fe2587c93f27",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5c4212bfb41b73f3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "099cc41bd13440c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "fb2044db73a2a27a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5d5554df1e3e0b1b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0f43f57ef3ca36e4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "955b5d31938edade",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5e27287f3095c45c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "7c75fc9897e72c28",
+  "lastOpenFiles": [
+    "README.assets/Pasted image 20231119184412.png",
+    "README.assets/Pasted image 20231119184339.png",
+    "README.assets/Pasted image 20231119184132.png",
+    "README.assets/Pasted image 20231119183713.png",
+    "README.assets/Pasted image 20231119183246.png",
+    "README.assets/Pasted image 20231119182826.png",
+    "README.assets/Pasted image 20231119182732.png",
+    "README.assets/Pasted image 20231119182309.png",
+    "README.assets/Pasted image 20231119182248.png",
+    "README.assets/Pasted image 20231119180445.png",
+    "README.assets/Pasted image 20231119180047.png",
+    "README.md"
+  ]
+}
