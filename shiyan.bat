@@ -1,3 +1,4 @@
+:: 记得windows 脚本的编码格式，很少是utf-8，一般是ISO8859-2
 @echo off
 if "%1" == "h" goto begin 
     mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&&exit 
