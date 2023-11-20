@@ -1,4 +1,4 @@
-@echo off;
+@echo off
 ipconfig /flushdns
 :: ĞŞ¸Ä ip mask getaway
 :: netsh interface ip set address "ÒÔÌ«Íø 2" static 10.102.220.223 255.255.254.0 10.102.220.1
