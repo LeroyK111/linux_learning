@@ -11,11 +11,9 @@
             "id": "7c75fc9897e72c28",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
+                "file": "README.assets/Pasted image 20231119174329.png"
               }
             }
           }
@@ -86,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "README.assets/Pasted image 20231119174329.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "README.assets/Pasted image 20231119174329.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "README.assets/Pasted image 20231119174329.png"
               }
             }
           }
@@ -149,6 +147,7 @@
   },
   "active": "7c75fc9897e72c28",
   "lastOpenFiles": [
+    "README.md",
     "README.assets/Pasted image 20231119184412.png",
     "README.assets/Pasted image 20231119184339.png",
     "README.assets/Pasted image 20231119184132.png",
@@ -158,8 +157,6 @@
     "README.assets/Pasted image 20231119182732.png",
     "README.assets/Pasted image 20231119182309.png",
     "README.assets/Pasted image 20231119182248.png",
-    "README.assets/Pasted image 20231119180445.png",
-    "README.assets/Pasted image 20231119180047.png",
-    "README.md"
+    "README.assets/Pasted image 20231119180445.png"
   ]
 }

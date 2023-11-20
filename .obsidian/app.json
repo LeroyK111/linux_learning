@@ -1,5 +1,6 @@
 {
   "attachmentFolderPath": "README.assets",
   "useMarkdownLinks": true,
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "newLinkFormat": "relative"
 }
