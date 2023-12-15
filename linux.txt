@@ -136,6 +136,8 @@ xftp上传下载文件, 当然文件小用ssh自带的src也一样
    4.ssh远程执行sudo命令
        ssh -t omd@192.168.25.137 sudo rsync hosts /etc/
  
+
+ 
 5.scp               
 scp 跨机远程拷贝
 scp是secure copy的简写，用于在Linux下进行远程拷贝文件的命令，和它类似的命令有cp，不过cp只是在本机进行拷贝不能跨服务器，而且scp传输是加密的。可能会稍微影响一下速度。两台主机之间复制文件必需得同时有两台主机的复制执行帐号和操作权限。
@@ -1600,3 +1602,6 @@ rm -rf $BACKUP/$DATETIME
 #删除10天前的备份文件
 find $BACKUP -mtime +10 -name "*.tar.gz" -exec rm -rf {} \;
 echo "=====备份文件成功==========="
+
+
+
