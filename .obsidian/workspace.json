@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "linux进阶/strace分析.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "099cc41bd13440c5",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "linux进阶/strace分析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "linux进阶/strace分析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "linux进阶/strace分析.md"
               }
             }
           }
@@ -148,17 +149,17 @@
   },
   "active": "e15c4aa70f13586a",
   "lastOpenFiles": [
-    "README.assets/Pasted image 20231119174329.png",
+    "README.assets/Pasted image 20231216145213.png",
+    "README.assets/Pasted image 20231216145159.png",
+    "README.assets/Pasted image 20231216145146.png",
+    "README.assets/Pasted image 20231216145131.png",
+    "README.assets/Pasted image 20231216145036.png",
     "README.md",
+    "README.assets/Pasted image 20231119174329.png",
     "README.assets/Pasted image 20231119184412.png",
     "README.assets/Pasted image 20231119184339.png",
     "README.assets/Pasted image 20231119184132.png",
     "README.assets/Pasted image 20231119183713.png",
-    "README.assets/Pasted image 20231119183246.png",
-    "README.assets/Pasted image 20231119182826.png",
-    "README.assets/Pasted image 20231119182732.png",
-    "README.assets/Pasted image 20231119182309.png",
-    "README.assets/Pasted image 20231119182248.png",
-    "README.assets/Pasted image 20231119180445.png"
+    "README.assets/Pasted image 20231119183246.png"
   ]
 }
