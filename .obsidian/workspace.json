@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux进阶/strace分析.md",
+                "file": "linux进阶/gcc库.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "099cc41bd13440c5",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux进阶/strace分析.md",
+                "file": "linux进阶/gcc库.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux进阶/strace分析.md",
+                "file": "linux进阶/gcc库.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux进阶/strace分析.md"
+                "file": "linux进阶/gcc库.md"
               }
             }
           }
@@ -149,6 +148,9 @@
   },
   "active": "e15c4aa70f13586a",
   "lastOpenFiles": [
+    "README.assets/Pasted image 20231218211348.png",
+    "linux进阶/redhat包管理命令.md",
+    "linux进阶/strace分析.md",
     "README.assets/Pasted image 20231216145213.png",
     "README.assets/Pasted image 20231216145159.png",
     "README.assets/Pasted image 20231216145146.png",
@@ -159,7 +161,6 @@
     "README.assets/Pasted image 20231119184412.png",
     "README.assets/Pasted image 20231119184339.png",
     "README.assets/Pasted image 20231119184132.png",
-    "README.assets/Pasted image 20231119183713.png",
-    "README.assets/Pasted image 20231119183246.png"
+    "README.assets/Pasted image 20231119183713.png"
   ]
 }

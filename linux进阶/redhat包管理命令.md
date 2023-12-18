@@ -1,0 +1,171 @@
+# dnf/yum命令管理软件
+
+dnf命令是最早在fedora发行版出现的软件安装命令，是yum命令的继任者，dnf保持了对yum命令参数的完全兼容，可取代yum命令。
+
+本文介绍的dnf命令的用法在**openEuler、Fedora 、Redhat、Mandriva、SuSE、YellowDog**等红帽系列的主流Linux发行版本中适用。
+
+## dnf命令及其相关概述
+
+|命令|概述|
+|---|---|
+|repolist|显示已配置的软件repo源。|
+|install|Linux上安装单个或多个软件包。|
+|upgrade|升级Linux上的一个或多个软件包。|
+|list|列出一个或一组软件包。|
+|info|显示关于软件包或软件包组的详细信息。|
+|updateinfo|显示关于包的公告信息。|
+|search|在软件包详细信息中搜索指定字符串。|
+|check-update|检查是否有软件包升级。|
+|remove|从系统中移除一个或多个软件包。|
+|reinstall|重装一个包。|
+|downgrade|降级软件包。|
+|autoremove|删除所有原先因为依赖关系安装的不需要的软件包。|
+|distro-sync|同步已经安装的软件包到最新可用版本。|
+|makecache|创建元数据缓存。|
+|repository-package|对指定仓库中的所有软件包运行命令。|
+|provides|查找提供指定内容的软件包。|
+|group|显示或使用组信息。|
+|history|显示或使用事务历史。|
+|clean|删除已缓存的数据。|
+
+### **已配置的软件repo**
+
+命令中dnf 改用yum，具有相同运行效果。
+
+显示已配置的软件仓库，默认添加 **--enabled** 选项（显示启用的仓库）。
+
+```
+# dnf repolist --enabledrepo id                                                                   repo nameEPOL                                                                      EPOLOS                                                                        OSdebuginfo                                                                 debuginfoeverything                                                                everythingpkgship_elasticsearch                                                     Elasticsearch repositorsource                                                                    sourceupdate                                                                    update
+```
+
+- **--all**: 显示所有的软件仓库
+    
+- **--disabled**: 显示被禁用的软件仓库
+    
+- **--enabled**: 显示已经启用的仓库（默认）
+
+### **安装单个或多个软件包**
+
+通过**install** 命令可以安装RPM包。
+
+```
+# dnf install 软件包
+```
+
+安装软件包的过程中可能会存在**冲突**的包或**无法安装**的包，可以在命令中增加 **--allowerasing** 来替换冲突的软件包或 **--skip-broken** 来跳过无法安装的软件包。
+
+```
+# dnf install 软件包 [软件包 ...] --allowerasing --skip-broken
+```
+
+当使用dnf安装软件包时，通过添加 **--installroot** 设置软件包安装的根目录。
+
+```
+# dnf install 软件包 --installroot 软件包安装的根目录
+```
+
+需要临时指定特定的repo源安装时，可以添加 **--setopt=reposdir=** 选项来指定repo源的加载目录。
+
+```
+# dnf install 软件包 --setopt=reposdir=repo源的加载目录
+```
+
+在安装选项时，不需要交互式确认时，可以通过添加 **-y** 或 **--assumeyes** 使需要安装的软件包全部自动应答为**是**。
+
+```
+# dnf install 软件包 -y
+```
+
+指定特定的repo源安装rpm包时，可以通过指定 **--repo** 或 **--enablerepo** 选项。为了达到相同的效果，也可以通过使用 **--disablerepo** 选项来禁用匹配的repo源，此处推荐您使用--repo选项来安装RPM包。
+
+```
+# dnf install 软件包 --repo=repo源
+```
+
+### **重新安装软件包**
+
+系统上的软件包需要执行重新安装操作时，可以执行`reinstall`命令。
+
+```
+# dnf reinstall 软件包
+```
+
+### **升级一个或多个软件包**
+
+- 通过**upgrade**或 **update**升级Linux上的一个或多个软件包。
+    
+
+```
+# dnf upgrade 软件包 [软件包 ...]# dnf update 软件包 [软件包 ...]
+```
+
+### **软件包降级**
+
+当软件包版本过高发生兼容性问题时，可以采用降级的方式解决。
+
+```
+# dnf downgrade 软件包
+```
+
+### **列出一个或一组软件包**
+
+罗列系统中已安装的软件包和配置的repo仓中存在的软件包列表，可以使用 `list` 命令。
+
+```
+# dnf list
+```
+
+可以通过添加选项过滤显示的包列表
+
+- **--all**: 显示所有的软件包（默认）
+    
+- **--available**: 只显示可用的软件包
+    
+- **--installed**: 只显示已安装的软件包
+    
+- **--extras**: 只显示额外的软件包
+    
+- **--updates**: 只显示需要被升级的软件包
+    
+- **--upgrades**: 只显示需要被升级的软件包
+    
+- **--autoremove**: 只显示需要被删除的软件包
+    
+- **--recent**: 限制最近被改变的软件包
+
+### **查看软件包详细信息**
+
+查看软件包的详细信息时，可以使用`info` 命令。
+
+```
+# dnf info 软件包
+```
+
+### **搜索软件包**
+
+如需在系统中安装软件包，但不确定软件包全称时，可使用`search` 命令查找匹配的包。
+
+```
+# dnf search 软件包
+```
+
+
+### **卸载一个或多个软件包**
+
+删除已过期或重复的软件包时，可使用`remove`命令移除一个软件包。
+
+```
+# dnf remove 软件包
+```
+
+- **--duplicates**: 删除已安装（重复）的软件包
+    
+- **--oldinstallonly**: 移除过期的“仅安装”软件包
+
+### **自动删除因为依赖关系安装的软件包**
+
+删除因为依赖关系安装的不需要的软件包时，可使用`autoremove`命令。
+
+```
+# dnf autoremove 软件包
+```
