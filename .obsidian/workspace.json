@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/curl用法.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "099cc41bd13440c5",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/curl用法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/curl用法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux进阶/ldconfig.md"
+                "file": "linux进阶/curl用法.md"
               }
             }
           }
@@ -135,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,6 +149,12 @@
   },
   "active": "e15c4aa70f13586a",
   "lastOpenFiles": [
+    "README.assets/Pasted image 20231228205441.png",
+    "README.assets/Pasted image 20231228205424.png",
+    "README.assets/Pasted image 20231228205410.png",
+    "未命名.md",
+    "linux进阶/curl用法.md",
+    "linux进阶/ldconfig.md",
     "README.assets/Pasted image 20231225214920.png",
     "README.assets/Pasted image 20231225214908.png",
     "linux进阶/gcc库.md",
@@ -160,9 +166,6 @@
     "README.assets/Pasted image 20231216145146.png",
     "README.assets/Pasted image 20231216145131.png",
     "README.assets/Pasted image 20231216145036.png",
-    "README.md",
-    "README.assets/Pasted image 20231119174329.png",
-    "README.assets/Pasted image 20231119184412.png",
-    "README.assets/Pasted image 20231119184339.png"
+    "README.md"
   ]
 }
