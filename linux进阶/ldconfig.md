@@ -101,3 +101,142 @@ key相当于第i条动态库记录的目录索引。通过索引可以查到valu
 
 本文主要通过解读Linux的ldconfig命令的关键代码，分析了ldconfig命令是如何实现读取缓存文件 `/etc/ld.so.cache` 的内容的。本文涉及到的ldconfig的cache.c 代码文件网址[1]，在参考资料里。
 
+## 如何从内存保存入ld.so.cache缓存文件？
+首先从整体上看 一下 /etc/ld.so.cache 文件的内容布局：
+![](../README.assets/Pasted%20image%2020231230235220.png)
+```c
+ save_cache() {  
+  
+ // 先计算 cache_name 里的新/旧格式的 所有动态库（cache_entry_new、cache_entry）的【信息记录】的条数  
+   
+ // 创建和初始化用于保存到ld.so.cache文件的 内存数据结构  
+  
+ if (opt_format != opt_format_old)  
+    {  
+      /* And the list of all entries in the new format.  */  
+      file_entries_new_size = sizeof (struct cache_file_new)  
+ + cache_entry_count * sizeof (struct file_entry_new);  
+      file_entries_new = xmalloc (file_entries_new_size);  
+  
+      /* Fill in the header.  */  
+      memset (file_entries_new, '\0', sizeof (struct cache_file_new));  
+      memcpy (file_entries_new->magic, CACHEMAGIC_NEW,  
+       sizeof CACHEMAGIC_NEW - 1);  
+      memcpy (file_entries_new->version, CACHE_VERSION,  
+       sizeof CACHE_VERSION - 1);  
+  
+      file_entries_new->nlibs = cache_entry_count;  
+      file_entries_new->len_strings = strings_finalized.size;  
+      file_entries_new->flags = cache_file_new_flags_endian_current;  
+    }  
+  
+    /*  
+       以上，是新cache_name内容的结构体的创建过程。重点分析：  
+     1. cache 数据在内存中的大小：为 file_entries_new_size ，等于struct cache_file_new 结构体作为头部的大小，加上 所有动态库的信息记录cache_entry_count * sizeof (struct file_entry_new) 的大小）。也就是 ld.so.cache 文件的数据由这两部分组成。  
+      2. 初始化头部： 第一部分的magic 值，设置为新格式的代号：CACHEMAGIC_NEW，也就是字符串 "glibc-ld.so.cache"；  
+      3. 初始化 动态库信息记录：包括初始化记录条数值 (nlibs)、初始化记录的字符串长度(len_strings)、记录标志位flags。  
+    */  
+  
+    //对于 hwcaps 特新需要特殊处理，本文不讨论。  
+    ……
+```
+
+准备好了内存数据，然后开始按各部分逐步写入到ld.so.cache文件。
+```c
+  /* Write out the cache.  */  
+  
+  /* Write cache first to a temporary file and rename it later.  */  
+  char *temp_name = xmalloc (strlen (cache_name) + 2);  
+  sprintf (temp_name, "%s~", cache_name);  
+  
+  
+  /* Create file.    
+     第一步创建临时文件 /etc/ld.so.cache~ 写完后会重命名为正式文件  
+     注意这里的临时文件名以~结尾  
+  */  
+  int fd = open (temp_name, O_CREAT|O_WRONLY|O_TRUNC|O_NOFOLLOW,  
+   S_IRUSR|S_IWUSR);  
+  if (fd < 0)  
+    error (EXIT_FAILURE, errno, _("Can't create temporary cache file %s"),  
+    temp_name);  
+  
+  /* Write contents.   
+     第二步，写入 cache_file */   
+  if (opt_format != opt_format_new)  
+    {  
+      if (write (fd, file_entries, file_entries_size)  
+   != (ssize_t) file_entries_size)  
+ error (EXIT_FAILURE, errno, _("Writing of cache data failed"));  
+    }  
+  if (opt_format != opt_format_old)  
+    {  
+      /* Align cache.  
+      第三步：写入兼容性所需的对齐数据，包括pad填充 */  
+      if (opt_format != opt_format_new)  
+ {  
+   char zero[pad];  
+   memset (zero, '\0', pad);  
+   if (write (fd, zero, pad) != (ssize_t) pad)  
+     error (EXIT_FAILURE, errno, _("Writing of cache data failed"));  
+ }    
+      /* 第四步： 写入 file_entries 动态库文件信息记录*/  
+      if (write (fd, file_entries_new, file_entries_new_size)  
+   != (ssize_t) file_entries_new_size)  
+ error (EXIT_FAILURE, errno, _("Writing of cache data failed"));  
+    }  
+  
+       /* 第五步： 写入 file_entries 的截止标记*/  
+  if (write (fd, strings_finalized.strings, strings_finalized.size)  
+      != (ssize_t) strings_finalized.size)  
+    error (EXIT_FAILURE, errno, _("Writing of cache data failed"));  
+  
+  if (opt_format != opt_format_old)  
+    {  
+      /* Align file position to 4.  */  
+      off64_t old_offset = lseek64 (fd, extension_offset, SEEK_SET);  
+      assert ((unsigned long long int) (extension_offset - old_offset) < 4);  
+        
+        /* 第六步： 写入 extensions directory 信息*/  
+      write_extensions (fd, str_offset, extension_offset);  
+    }
+```
+临时文件写完，内容就是最新的ld.so.cache需要的内容，但临时文件还要改名替换掉ld.so.cache:
+```c
+/* Make sure user can always read cache file 设置文件权限，允许ld.so.cache 被所有账号读取，且允许被创建者（root）修改。这里涉及到 Linux的glibc 中的 S_IROTH|S_IRGRP|S_IRUSR|S_IWUSR 标记， 其中R代表读，W代表写，OTH代表非创建者也非同组的其他账号权限，USR代表创建者，GRP代表与创建者所在的组账号*/  
+  if (chmod (temp_name, S_IROTH|S_IRGRP|S_IRUSR|S_IWUSR))  
+    error (EXIT_FAILURE, errno,  
+    _("Changing access rights of %s to %#o failed"), temp_name,  
+    S_IROTH|S_IRGRP|S_IRUSR|S_IWUSR);  
+  
+  /* Make sure that data is written to disk.    
+     用fsync() 调用，确保文件从内存缓冲落盘到硬盘。  
+  */  
+  if (fsync (fd) != 0 || close (fd) != 0)  
+    error (EXIT_FAILURE, errno, _("Writing of cache data failed"));  
+  
+  /* Move temporary to its final location.    
+     真正开始将 临时文件 /etc/ld.so.cache~ 重命名为 /etc/ld.so.cache  
+  */  
+  if (rename (temp_name, cache_name))  
+    error (EXIT_FAILURE, errno, _("Renaming of %s to %s failed"), temp_name,  
+    cache_name);  
+    ……
+```
+以上， ldconfig 可执行文件对 /etc/ld.so.cache 的写入全部完成。
+
+最后做一下内存数据清理：
+```c
+ /* Free all allocated memory.  */  
+  free (file_entries_new);  
+  free (file_entries);  
+  free (strings_finalized.strings);  
+  free (temp_name);  
+  
+  while (entries)  
+    {  
+      entry = entries;  
+      entries = entries->next;  
+      free (entry);  
+    }
+```
+

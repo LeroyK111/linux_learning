@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux进阶/curl用法.md",
+                "file": "linux进阶/ldconfig.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "099cc41bd13440c5",
@@ -80,12 +81,22 @@
         "type": "tabs",
         "children": [
           {
+            "id": "5e27287f3095c45c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "linux进阶/ldconfig.md"
+              }
+            }
+          },
+          {
             "id": "5d5554df1e3e0b1b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux进阶/curl用法.md",
+                "file": "linux进阶/ldconfig.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux进阶/curl用法.md",
+                "file": "linux进阶/ldconfig.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,24 +129,12 @@
                 "useHierarchy": true
               }
             }
-          },
-          {
-            "id": "5e27287f3095c45c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "linux进阶/curl用法.md"
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,11 +148,12 @@
   },
   "active": "e15c4aa70f13586a",
   "lastOpenFiles": [
+    "README.assets/Pasted image 20231230235220.png",
+    "linux进阶/curl用法.md",
     "README.assets/Pasted image 20231228205441.png",
     "README.assets/Pasted image 20231228205424.png",
     "README.assets/Pasted image 20231228205410.png",
     "未命名.md",
-    "linux进阶/curl用法.md",
     "linux进阶/ldconfig.md",
     "README.assets/Pasted image 20231225214920.png",
     "README.assets/Pasted image 20231225214908.png",
@@ -165,7 +165,6 @@
     "README.assets/Pasted image 20231216145159.png",
     "README.assets/Pasted image 20231216145146.png",
     "README.assets/Pasted image 20231216145131.png",
-    "README.assets/Pasted image 20231216145036.png",
     "README.md"
   ]
 }
