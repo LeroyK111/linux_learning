@@ -57,3 +57,4 @@ scp /local_path/filename username@serverip:/path  从本地上传服务器
 
 单独写个教程。
 ssh root@127.0.0.1 -p 6666
+
