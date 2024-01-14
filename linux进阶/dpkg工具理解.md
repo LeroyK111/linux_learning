@@ -328,3 +328,114 @@ Untracked files:
         var/lib/dpkg/alternatives/pico
 ```
 
+
+## 升级软件包的风险
+
+Linux：Debian/Ubuntu软件包管理系统在升级覆盖软件包时，如何确定哪些文件没有被覆盖的风险？
+
+那么对于Debian/Ubuntu软件仓库方式安装的软件，有时候我们在更新软件时，或离线环境下覆盖安装软件包时，并不希望现有的一些文件被覆盖，如何在安装前，提前获知哪些文件存在覆盖的风险？下面介绍dpkg的一个查询功能，可达到这个目的。
+
+在deb控制文件规范中，conffile 是软件包管理系统在升级该软件包时不会覆盖的配置文件（通常在 `/etc` 中）的列表。这确保了对这些文件的本地修改会被保留，因此是一个非常重要的功能，使得正在运行中的系统的软件包可以被原地升级。
+
+要准确得到升级时将会保留哪些文件的内容，请运行：
+
+```sh
+dpkg --status package
+```
+
+并查看“Conffiles:”的内容。
+
+例如 查询 nano 软件安装时不会覆盖的文件（如果文件已存在）
+
+```sh
+# dpkg --status nano  
+Package: nano  
+Status: install ok installed  
+Priority: important  
+Section: editors  
+Installed-Size: 860  
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>  
+Architecture: amd64  
+Version: 6.2-1  
+Replaces: nano-tiny (<< 2.8.6-2), pico  
+Depends: libc6 (>= 2.34), libncursesw6 (>= 6), libtinfo6 (>= 6)  
+Suggests: hunspell  
+Breaks: nano-tiny (<< 2.8.6-2)  
+Conflicts: pico  
+# 配置文件
+Conffiles:  
+ /etc/nanorc b2c34817282284614d58163ef56df0d9  
+Description: small, friendly text editor inspired by Pico  
+ GNU nano is an easy-to-use text editor originally designed as a replacement  
+ for Pico, the ncurses-based editor from the non-free mailer package Pine  
+ (itself now available under the Apache License as Alpine).  
+   
+ ……
+```
+
+Conffiles:  不会被覆盖的文件，是一个配置文件。一般这种文件名以`rc`结尾的，都代表配置文件 。如 /root/.condarc 是 anaconda3在 Linux的用户目录下的配置文件；/root/.bashrc 是 bash的用户配置脚本……
+
+那么通过 dpkg --contents (= dpkg-deb --contents) 来列出档案文件清单（deb包内的文件目录层级列表）
+
+```sh
+# dpkg  --contents man-db_2.10.2-1_amd64.deb  
+  
+       0 2022-03-18 03:03 ./  
+       0 2022-03-18 03:03 ./etc/  
+       0 2022-03-18 03:03 ./etc/apparmor.d/  
+    3448 2022-03-18 03:03 ./etc/apparmor.d/usr.bin.man  
+       0 2022-03-18 03:03 ./etc/cron.daily/  
+    1330 2022-03-18 03:03 ./etc/cron.daily/man-db  
+       0 2022-03-18 03:03 ./etc/cron.weekly/  
+    1020 2022-03-18 03:03 ./etc/cron.weekly/man-db  
+    5217 2022-03-18 03:03 ./etc/manpath.config  
+       0 2022-03-18 03:03 ./lib/  
+       0 2022-03-18 03:03 ./lib/systemd/  
+       0 2022-03-18 03:03 ./lib/systemd/system/  
+     738 2022-03-18 03:03 ./lib/systemd/system/man-db.service  
+     171 2022-03-18 03:03 ./lib/systemd/system/man-db.timer  
+       0 2022-03-18 03:03 ./usr/  
+       0 2022-03-18 03:03 ./usr/bin/  
+   35592 2022-03-18 03:03 ./usr/bin/catman  
+  102144 2022-03-18 03:03 ./usr/bin/lexgrog  
+  120504 2022-03-18 03:03 ./usr/bin/man  
+   36536 2022-03-18 03:03 ./usr/bin/man-recode  
+  143296 2022-03-18 03:03 ./usr/bin/mandb  
+   31520 2022-03-18 03:03 ./usr/bin/manpath  
+   48416 2022-03-18 03:03 ./usr/bin/whatis  
+       0 2022-03-18 03:03 ./usr/lib/  
+       0 2022-03-18 03:03 ./usr/lib/man-db/  
+  193008 2022-03-18 03:03 ./usr/lib/man-db/libman-2.10.2.so  
+   30864 2022-03-18 03:03 ./usr/lib/man-db/libmandb-2.10.2.so  
+       0 2022-03-18 03:03 ./usr/lib/mime/  
+       0 2022-03-18 03:03 ./usr/lib/mime/packages/  
+    1863 2022-03-18 03:03 ./usr/lib/mime/packages/man-db  
+       0 2022-03-18 03:03 ./usr/lib/tmpfiles.d/  
+      33 2022-03-18 03:03 ./usr/lib/tmpfiles.d/man-db.conf  
+       0 2022-03-18 03:03 ./usr/libexec/  
+       0 2022-03-18 03:03 ./usr/libexec/man-db/  
+   23320 2022-03-18 03:03 ./usr/libexec/man-db/globbing  
+   28248 2022-03-18 03:03 ./usr/libexec/man-db/manconv  
+   52048 2022-03-18 03:03 ./usr/libexec/man-db/zsoelim  
+       0 2022-03-18 03:03 ./usr/sbin/  
+   14904 2022-03-18 03:03 ./usr/sbin/accessdb  
+       0 2022-03-18 03:03 ./usr/share/  
+       0 2022-03-18 03:03 ./usr/share/bug/  
+       0 2022-03-18 03:03 ./usr/share/bug/man-db/  
+     369 2022-03-18 03:03 ./usr/share/bug/man-db/presubj  
+       0 2022-03-18 03:03 ./usr/share/doc/  
+       0 2022-03-18 03:03 ./usr/share/doc/man-db/  
+  141531 2022-03-18 02:41 ./usr/share/doc/man-db/ChangeLog-2013.gz  
+    3276 2022-03-18 02:41 ./usr/share/doc/man-db/FAQ  
+   25504 2022-03-18 02:41 ./usr/share/doc/man-db/NEWS.md.gz  
+    4907 2022-03-18 02:41 ./usr/share/doc/man-db/README.md.gz  
+    3271 2022-03-18 02:41 ./usr/share/doc/man-db/THANKS  
+     646 2022-03-18 02:41 ./usr/share/doc/man-db/TODO  
+    1898 2022-03-18 03:03 ./usr/share/doc/man-db/changelog.Debian.gz  
+    2191 2022-03-18 03:03 ./usr/share/doc/man-db/copyright  
+……
+```
+
+deb包内的目录层次结构的文件，除去“Conffiles:”的文件，其他的文件都会在安装时被覆盖。当你升级软件包时，系统会询问你是否要保留旧的配置文件。
+
+如果你是deb包的创建者，生成deb包时，dh_installdeb(dh_installdeb 是一个 debhelper 程序，负责以正确的权限将文件安装到软件包构建目录下的 DEBIAN 目录中) 会自动将 软件包的etc目录下的文件标记为配置文件。所以也可以省略在conffiles文件中指定。对于大多数软件包类型而言，建议在创建deb包时，将 conffiles指定的文件都存储在 /etc 目录下，这些文件都会被默认标记为配置文件而不覆盖。
