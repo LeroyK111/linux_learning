@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/打包deb.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux进阶/ldconfig.md"
+                "file": "linux进阶/打包deb.md"
               }
             }
           },
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/打包deb.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/打包deb.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,13 +148,16 @@
   },
   "active": "e15c4aa70f13586a",
   "lastOpenFiles": [
+    "README.assets/Pasted image 20240118011037.png",
+    "README.assets/Pasted image 20240118011000.png",
+    "README.assets/Pasted image 20240118010948.png",
+    "linux进阶/ldconfig.md",
     "README.assets/Pasted image 20231230235220.png",
     "linux进阶/curl用法.md",
     "README.assets/Pasted image 20231228205441.png",
     "README.assets/Pasted image 20231228205424.png",
     "README.assets/Pasted image 20231228205410.png",
     "未命名.md",
-    "linux进阶/ldconfig.md",
     "README.assets/Pasted image 20231225214920.png",
     "README.assets/Pasted image 20231225214908.png",
     "linux进阶/gcc库.md",
@@ -162,9 +165,6 @@
     "linux进阶/redhat包管理命令.md",
     "linux进阶/strace分析.md",
     "README.assets/Pasted image 20231216145213.png",
-    "README.assets/Pasted image 20231216145159.png",
-    "README.assets/Pasted image 20231216145146.png",
-    "README.assets/Pasted image 20231216145131.png",
     "README.md"
   ]
 }
