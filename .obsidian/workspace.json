@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/RPM和Deb包互相转换.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "099cc41bd13440c5",
@@ -86,7 +85,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux进阶/ldconfig.md"
+                "file": "linux进阶/RPM和Deb包互相转换.md"
               }
             }
           },
@@ -96,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/RPM和Deb包互相转换.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux进阶/ldconfig.md",
+                "file": "linux进阶/RPM和Deb包互相转换.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,23 +147,24 @@
   },
   "active": "e15c4aa70f13586a",
   "lastOpenFiles": [
+    "linux进阶/free用法.md",
+    "linux进阶/RPM和Deb包互相转换.md",
+    "README.assets/Pasted image 20240121182701.png",
+    "README.assets/Pasted image 20240121182637.png",
+    "README.assets/Pasted image 20240121182632.png",
+    "README.assets/Pasted image 20240121182549.png",
+    "README.assets/Pasted image 20240121182506.png",
+    "README.assets/Pasted image 20240121182502.png",
+    "README.assets/Pasted image 20240121182428.png",
+    "README.assets/Pasted image 20240121182318.png",
+    "linux进阶/ldconfig.md",
     "README.assets/Pasted image 20231230235220.png",
     "linux进阶/curl用法.md",
     "README.assets/Pasted image 20231228205441.png",
-    "README.assets/Pasted image 20231228205424.png",
-    "README.assets/Pasted image 20231228205410.png",
     "未命名.md",
-    "linux进阶/ldconfig.md",
-    "README.assets/Pasted image 20231225214920.png",
-    "README.assets/Pasted image 20231225214908.png",
     "linux进阶/gcc库.md",
-    "README.assets/Pasted image 20231218211348.png",
     "linux进阶/redhat包管理命令.md",
     "linux进阶/strace分析.md",
-    "README.assets/Pasted image 20231216145213.png",
-    "README.assets/Pasted image 20231216145159.png",
-    "README.assets/Pasted image 20231216145146.png",
-    "README.assets/Pasted image 20231216145131.png",
     "README.md"
   ]
 }
