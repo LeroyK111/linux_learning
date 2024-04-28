@@ -219,3 +219,13 @@ AMD 的 无缝启动功能已经扩展到支持 Display Core Next 3.0 及以后�
 ◈ 在 EROFSen.wikipedia.org 上，MicroLZMA 压缩 现在被认为是稳定的。
 ◈ 更好地支持 采用 RISC-V 的 Milk-V Pioneermilkv.io 板。
 ◈ 引入 Nouveau GPU 系统处理器（GSP），它为英伟达的 “Turing” 及更新的 GPU 开启了更好的体验途径。
+
+
+### 6.8
+
+- LAM / 线性地址屏蔽的虚拟化支持
+- KVM 的来宾优先内存支持
+- 更新 Bcachefs 文件系统的基本在线文件系统检查和修复机制
+- 对树莓派 5 使用的博通 BCM2712 芯片提供支持
+- 基于 AMD ACPI 的 WiFi 频段 RFI 缓解功能
+- zswap、CephFS 等功能优化
