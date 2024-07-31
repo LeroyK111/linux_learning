@@ -1,5 +1,6 @@
 {
   "main": {
+<<<<<<< HEAD
     "id": "94fea44853cda3c0",
     "type": "split",
     "children": [
@@ -9,11 +10,26 @@
         "children": [
           {
             "id": "d995317894c60cdd",
+=======
+    "id": "b6ea7913b70715da",
+    "type": "split",
+    "children": [
+      {
+        "id": "a6664fbde0afd39e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "727ca119aed0509c",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
+<<<<<<< HEAD
                 "file": "rustLinux/readme.md",
+=======
+                "file": "windows.md",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
                 "mode": "source",
                 "source": false
               }
@@ -25,6 +41,7 @@
     "direction": "vertical"
   },
   "left": {
+<<<<<<< HEAD
     "id": "ecfe75eaa57f9449",
     "type": "split",
     "children": [
@@ -34,6 +51,17 @@
         "children": [
           {
             "id": "bab1b17d8bd962f8",
+=======
+    "id": "371ac5f589de0002",
+    "type": "split",
+    "children": [
+      {
+        "id": "b67722c2bd42766f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "63285af90724dbf9",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +71,11 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "f30d50ee92c934ca",
+=======
+            "id": "a928fffb872d0898",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +90,11 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "0f705df34f041216",
+=======
+            "id": "ab4bea4c9ac40088",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,6 +105,7 @@
       }
     ],
     "direction": "horizontal",
+<<<<<<< HEAD
     "width": 200
   },
   "right": {
@@ -81,11 +118,29 @@
         "children": [
           {
             "id": "eacfc1b687ca4086",
+=======
+    "width": 300
+  },
+  "right": {
+    "id": "69ba389e91f098f5",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d38a87ce53133fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cfb0ef318582fc18",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+<<<<<<< HEAD
                 "file": "rustLinux/readme.md",
+=======
+                "file": "windows.md",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +152,31 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "81316e4fd4481d37",
+=======
+            "id": "ecc365fb44ad913d",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< HEAD
                 "file": "rustLinux/readme.md",
+=======
+                "file": "windows.md",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
+<<<<<<< HEAD
             "id": "7314da23e227bb62",
+=======
+            "id": "c40db60c2ace0bcd",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,11 +187,16 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "ebd27e7f33649e15",
+=======
+            "id": "7eff04029e99bd45",
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "rustLinux/readme.md"
               }
             }
@@ -135,6 +207,18 @@
     ],
     "direction": "horizontal",
     "width": 300
+=======
+                "file": "windows.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,6 +230,7 @@
       "command-palette:打开命令面板": false
     }
   },
+<<<<<<< HEAD
   "active": "d995317894c60cdd",
   "lastOpenFiles": [
     "README.assets/Pasted image 20240731201557.png",
@@ -159,5 +244,16 @@
     "README.assets/Pasted image 20240731195911.png",
     "linuxUpdateLog/readme.md",
     "windows.md"
+=======
+  "active": "727ca119aed0509c",
+  "lastOpenFiles": [
+    "linuxUpdateLog/readme.md",
+    "README.assets/Pasted image 20231119180445.png",
+    "rustLinux/readme.md",
+    "linux笔记.pdf",
+    "linux.png",
+    "changed/readme.md",
+    "chipInstruction/RISC-V.md"
+>>>>>>> a1eafe3591a0fbfdb299ce2c320dcda6b50de9ed
   ]
 }
