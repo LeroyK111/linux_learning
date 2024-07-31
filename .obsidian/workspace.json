@@ -1,0 +1,163 @@
+{
+  "main": {
+    "id": "94fea44853cda3c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "62f87c44b99fc8c4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d995317894c60cdd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "rustLinux/readme.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ecfe75eaa57f9449",
+    "type": "split",
+    "children": [
+      {
+        "id": "6edcf73e179e3d2e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bab1b17d8bd962f8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f30d50ee92c934ca",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0f705df34f041216",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "13d9ecb124e831b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "39e3ed09d363a72e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eacfc1b687ca4086",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "rustLinux/readme.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "81316e4fd4481d37",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "rustLinux/readme.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7314da23e227bb62",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ebd27e7f33649e15",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "rustLinux/readme.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "d995317894c60cdd",
+  "lastOpenFiles": [
+    "README.assets/Pasted image 20240731201557.png",
+    "README.assets/Pasted image 20240731201402.png",
+    "README.assets/Pasted image 20240731201330.png",
+    "README.assets/Pasted image 20240731201249.png",
+    "README.assets/Pasted image 20240731200022.png",
+    "README.assets/Pasted image 20240731200004.png",
+    "README.assets/Pasted image 20240731195939.png",
+    "README.assets/Pasted image 20240731195925.png",
+    "README.assets/Pasted image 20240731195911.png",
+    "linuxUpdateLog/readme.md",
+    "windows.md"
+  ]
+}
