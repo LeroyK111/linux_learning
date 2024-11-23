@@ -1,5 +1,30 @@
 # windows 指令
 
+## Chocolatey windows包管理
+
+官网: https://chocolatey.org/install
+
+### 常用命令
+
+- 安装三方包
+```shell
+choco install notepadplusplus
+```
+- 升级三方包
+```shell
+choco upgrade notepadplusplus
+```
+```
+# 升级自己
+choco upgrade chocolatey
+```
+
+- 卸载三方包
+```
+choco uninstall chocolatey
+```
+
+
 ## sudo 命令
 
 Sudo for Windows 将允许用户直接从未提权终端窗口运行提权命令。

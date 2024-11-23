@@ -219,3 +219,30 @@ AMD 的 无缝启动功能已经扩展到支持 Display Core Next 3.0 及以后�
 ◈ 在 EROFSen.wikipedia.org 上，MicroLZMA 压缩 现在被认为是稳定的。
 ◈ 更好地支持 采用 RISC-V 的 Milk-V Pioneermilkv.io 板。
 ◈ 引入 Nouveau GPU 系统处理器（GSP），它为英伟达的 “Turing” 及更新的 GPU 开启了更好的体验途径。
+
+
+### 6.8
+
+- LAM / 线性地址屏蔽的虚拟化支持
+- KVM 的来宾优先内存支持
+- 更新 Bcachefs 文件系统的基本在线文件系统检查和修复机制
+- 对树莓派 5 使用的博通 BCM2712 芯片提供支持
+- 基于 AMD ACPI 的 WiFi 频段 RFI 缓解功能
+- zswap、CephFS 等功能优化
+
+### 6.9
+
+- 增强网络相关功能，包括支持 2.5GbE 和 5GbE EEE 链路模式、支持在 IPSec 中转发 ICMP 错误消息等
+- 支持 GCC 命名地址空间，增加 FUSE 直通的初始支持
+- 在 AArch64 架构上提供 Rust 的支持、将 Rust 更新到 1.76.0 版
+- 增加对 ORC 堆栈展开器的支持、对龙芯架构的内核实时修复
+- 对休眠映像创建和加载代码的 LZ4 压缩支持
+- F2FS 闪存友好文件系统获得了分区块设备支持、在突然断电后增强数据恢复
+- exFAT 文件系统获得目录同步性能的改进
+- 添加对未来 AMD 硬件的支持
+- 更新 Intel Xe 显示驱动程序
+- 添加对 Intel i915 显示驱动程序的 DP 隧道支持
+
+### 6.10
+
+- 新的[Panthor 图形直接渲染管理器 (DRM) 驱动程序](https://link.juejin.cn/?target=https%3A%2F%2Fwww.collabora.com%2Fnews-and-blog%2Fnews-and-events%2Frelease-the-panthor.html "https://www.collabora.com/news-and-blog/news-and-events/release-the-panthor.html")。这段延迟的代码应该在 6.9 Linux 内核中发布，它支持更新的 Arm Mali 图形处理器。这一发展对于围绕[基于 Arm 的架构](https://link.juejin.cn/?target=https%3A%2F%2Fthenewstack.io%2Farm-eyes-ai-with-its-latest-neoverse-cores-and-subsystems%2F "https://thenewstack.io/arm-eyes-ai-with-its-latest-neoverse-cores-and-subsystems/")构建的下一代设备来说尤其重要。它将提高它们的图形性能和兼容性。
