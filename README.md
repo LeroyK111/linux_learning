@@ -67,7 +67,7 @@ Linux发展到今天其代码量近2000万行，可以用浩如烟海来形容�
 https://ohmyz.sh/
 必用主题：bira
 必装插件：zsh-autosuggestions git ag cp autojump
-
+![](https://raw.githubusercontent.com/LeroyK111/pictureBed/master/20241201111715.png)
 
 ### 常见的环境变量文件
 1. **/etc/environment:**
