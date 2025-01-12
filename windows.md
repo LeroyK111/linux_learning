@@ -83,4 +83,3 @@ sudo netstat -ab
 
 ![](../readme.assets/Pasted%20image%2020240319231025.png)
 
-
