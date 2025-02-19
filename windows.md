@@ -83,3 +83,10 @@ sudo netstat -ab
 
 ![](../readme.assets/Pasted%20image%2020240319231025.png)
 
+
+## 常用技巧
+
+ping 多个地址
+```sh
+for /L %D in (1,1,255) do ping 10.168.1.%D
+```
