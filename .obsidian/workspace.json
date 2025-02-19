@@ -11,14 +11,12 @@
             "id": "e8b2afcbb4b4fe29",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "linuxUpdateLog/readme.md",
-                "mode": "source",
-                "source": false
+                "file": "linux笔记2.pdf"
               },
-              "icon": "lucide-file",
-              "title": "readme"
+              "icon": "lucide-file-text",
+              "title": "linux笔记2"
             }
           }
         ]
@@ -170,6 +168,13 @@
   },
   "active": "e8b2afcbb4b4fe29",
   "lastOpenFiles": [
+    "macos.md",
+    "linux笔记2.pdf",
+    "README.md",
+    "windows.md",
+    "linux.png",
+    "linux笔记.pdf",
+    "linuxUpdateLog/readme.md",
     "驱动-微码-bios/readme.md",
     "驱动-微码-bios/三种操作系统如何固定串口号.md",
     "rustLinux/readme.md",
