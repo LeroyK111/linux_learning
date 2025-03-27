@@ -26,3 +26,4 @@ netsh interface ip add dns name = "WLAN" addr = 149.154.159.92
 netsh interface ip add dns name = "WLAN" addr = 1.0.0.1
 netsh interface ip add dns name = "WLAN" addr = 1.1.1.1
 @REM pause
+
