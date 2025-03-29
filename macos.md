@@ -75,4 +75,7 @@ Copy code
 ```sh
 sudo xattr -r -d com.apple.quarantine /Applications/PicGo.app
 ```
-
+这也是可以的
+```
+xattr -cr /Applications/v2rayN.app
+```
