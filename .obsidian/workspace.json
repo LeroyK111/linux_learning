@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "cdee33871871c1c8",
+        "id": "3cba7a7196c9a7bb",
         "type": "tabs",
         "children": [
           {
-            "id": "e8b2afcbb4b4fe29",
+            "id": "ea9d189c69819750",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "linux笔记2.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "linux笔记2"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -166,10 +164,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "e8b2afcbb4b4fe29",
+  "active": "ea9d189c69819750",
   "lastOpenFiles": [
-    "macos.md",
     "linux笔记2.pdf",
+    "macos.md",
     "README.md",
     "windows.md",
     "linux.png",
