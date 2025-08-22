@@ -90,3 +90,18 @@ ping 多个地址
 ```sh
 for /L %D in (1,1,255) do ping 10.168.1.%D
 ```
+
+
+### 解决Win11 24H2下网页卡屏\卡顿\显示残留的问题
+
+- **MPO** 是 Windows 从 Win10 开始引入的一种图像合成优化机制。
+    
+- 它能把视频、网页渲染层直接交给显卡合成，降低 CPU 占用，提高效率。
+    
+- 但 **部分驱动（尤其是 Intel / NVIDIA / AMD 新旧驱动混合时）** 在 Win11 24H2 下会和 MPO 产生兼容性问题 → 出现 **画面卡屏、残影、掉帧**。
+
+![](../Container_Cluster/assets/Pasted%20image%2020250823055814.png)
+如果没有解决, 可以关闭硬件加速gpu计划
+![](../Container_Cluster/assets/Pasted%20image%2020250823055857.png)
+
+
